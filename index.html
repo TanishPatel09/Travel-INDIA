@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Colorful India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #444;
+        }
+
+        header {
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+            color: #ffffff;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        nav {
+
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: #4e54c8;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .featured-destinations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .destination {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .destination:hover {
+            transform: translateY(-10px);
+        }
+
+        .destination img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .destination h3 {
+            background: #4e54c8;
+            color: white;
+            margin: 0;
+            padding: 1rem;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .destination p {
+            padding: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: black;
+        }
+
+        .packages {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .packages table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .packages th, .packages td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .packages th {
+            background: #4e54c8;
+            color: white;
+        }
+
+        .testimonials {
+            margin-top: 3rem;
+            background: linear-gradient(to right, #f9a8d4, #fad0c4);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial {
+            margin-bottom: 1.5rem;
+            border-left: 6px solid #4e54c8;
+            padding-left: 1rem;
+            color: #333;
+        }
+
+        .newsletter {
+            margin-top: 3rem;
+            text-align: center;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter input[type="email"] {
+            padding: 0.8rem;
+            width: 60%;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter button {
+            padding: 0.8rem 1.5rem;
+            background: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .newsletter button:hover {
+            background: #3c43a1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #4e54c8;
+            color: white;
+            margin-top: 3rem;
+        }
+        a
+        {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header>
+        
+        <h1>Explore Colorful India</h1>
+        <div class="search-container">
+            <select class="search-select" onchange="location = this.value;">
+                <option value="" disabled selected>Select a destination...</option>
+                <option value="taj-mahal.html">Taj Mahal, Agra</option>
+                <option value="kerala.html">Kerala</option>
+                <option value="leh.html">Leh-Ladakh</option>
+                <option value="mumbai.html">Mumbai</option>
+                <option value="indore.html">Indore</option>
+                <option value="jaipur.html">Jaipur - The Pink City</option>
+                <option value="kolkata.html">Kolkata</option>
+                <option value="bengaluru.html">Bengaluru</option>
+                <option value="assam.html">Assam</option>
+                <option value="diu.html">Diu</option>
+                <option value="varanasi.html">Varanasi</option>
+                <option value="konkan.html">Konkan Coast</option>
+            </select>
+            <button class="search-button" onclick="alert('Select a destination from the dropdown.')">🔍</button>
+        </div>
+        <p>Uncover the vibrant culture, scenic beauty, and unforgettable experiences of India</p>
+    </header>
+
+    <nav>
+        <a href="#destinations">Destinations</a>
+        <a href="#packages">Packages</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#newsletter">Newsletter</a>
+    </nav>
+
+    <main class="container">
+        <section id="destinations">
+            <h2>Featured Destinations</h2>
+            <div class="featured-destinations" id="destination-list">
+                <div class="destination">
+                    <a href="taj-mahal.html">
+                    <img src="agra.webp" alt="Taj Mahal">
+                    <h3>Taj Mahal, Agra</h3>
+                    <p>Marvel at the beauty of this iconic monument, a symbol of love and a UNESCO World Heritage Site. The Taj Mahal stands as an architectural masterpiece and one of the most famous attractions in the world.</p>
+                </a>
+                </div>
+                <div class="destination">
+                    <a href="kerala.html">
+                        <img src="kerala.avif" alt="Kerala">
+                    <h3>Kerala</h3>
+                    <p>Experience the tranquility of the backwaters, lush greenery, and traditional houseboats. Kerala is a haven for nature lovers, with stunning beaches, hill stations, and vibrant cultural festivals.</p>
+                </a>   
+                </div>
+                <div class="destination">
+                    <a href="leh.html">
+                    <img src="leh.webp" alt="Leh-Ladakh">
+                    <h3>Leh-Ladakh</h3>
+                    <p>Adventure awaits in the rugged mountains, serene monasteries, and breathtaking landscapes. Leh-Ladakh is known for its high-altitude treks, spectacular lakes, and unique Tibetan culture.</p>
+                </a>
+                </div>
+                <div class="destination">
+                    <a href="mumbai.html">
+                    <img src="mum.webp" alt="Mumbai">
+                    <h3>Mumbai</h3>
+                    <p>Explore the bustling city life, iconic landmarks like Gateway of India, and stunning Marine Drive. Mumbai is the heart of India's film industry and a melting pot of cultures.</p>
+                </a>
+                </div>
+                <div class="destination">
+                    <a href="indore.html">
+                        <img src="indore.webp" alt="Indore">
+                    <h3>Indore</h3>
+                    <p>Relish the culinary delights of Sarafa Bazaar and explore the historical Rajwada Palace. Indore offers a blend of history, culture, and food that will leave you wanting more.</p>
+                </a>
+                </div>
+                <div class="destination">
+                    <a href="jaipur.html">
+                    <img src="jaipur.jpg" alt="Jaipur">
+                    <h3>Jaipur - The Pink City</h3>
+                    <p>Discover the royal heritage at Amer Fort, City Palace, and Hawa Mahal. Known for its colorful streets and majestic palaces, Jaipur is a gem of Rajasthan.</p>
+                </a>
+                </div>
+                <div class="destination">
+                    <a href="kolkata.html">
+                    <img src="kolkata.avif" alt="Kolkata">
+                    <h3>Kolkata</h3>
+                    <p>Immerse yourself in art, literature, and history while exploring Victoria Memorial and Howrah Bridge. Kolkata is a city of contrasts, with rich colonial architecture and a thriving cultural scene.</p>
+                </a>
+                </div>
+                <div class="destination">
+                    <a href="bengaluru.html">
+                    <img src="bengaluru.webp" alt="Bengaluru">
+                    <h3>Bengaluru</h3>
+                    <p>Experience the charm of gardens, IT hubs, and vibrant nightlife in the Silicon Valley of India. Bengaluru is known for its modern infrastructure, diverse food scene, and lush green parks.</p>
+                </a>
+                </div>
+                <div class="destination">
+                    <a href="assam.html">
+                    <img src="assam.avif" alt="Assam">
+                    <h3>Assam</h3>
+                    <p>Explore the lush tea gardens, Kaziranga National Park, and the mighty Brahmaputra River. Assam offers rich cultural experiences, vibrant festivals, and beautiful landscapes.</p>
+                </a>
+                </div>
+                <div class="destination">
+                   <a href="diu.html"> 
+                    <img src="diu.webp" alt="Diu">
+                    <h3>Diu</h3>
+                    <p>Unwind on serene beaches, visit historical forts, and enjoy the laid-back charm of Diu. This coastal town offers a blend of Portuguese heritage and natural beauty.</p>
+                </a>
+                </div>
+                <div class="destination">
+                    <a href="varanasi.html">
+                    <img src="varanasi.avif" alt="Varanasi">
+                    <h3>Varanasi</h3>
+                    <p>One of the oldest living cities in the world, Varanasi offers a spiritual journey along the banks of the sacred Ganges River. Visit the ghats, temples, and experience the mesmerizing evening Aarti.</p>
+                </a>
+                </div>
+                <div class="destination">
+                    <a href="konkan.html">
+                    <img src="konkan.avif" alt="Konkan">
+                    <h3>Konkan Coast</h3>
+                    <p>Relax on the pristine beaches, explore ancient forts, and enjoy the local seafood. Konkan offers a beautiful coastal escape with lush greenery and a tranquil atmosphere.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <h2>Travel Packages</h2>
+            <div class="packages">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Destination</th>
+                            <th>Package Details</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Agra</td>
+                            <td>2 Days, 1 Night - Includes hotel stay, guided tour, and meals</td>
+                            <td>₹5000</td>
+                        </tr>
+                        <tr>
+                            <td>Kerala</td>
+                            <td>5 Days, 4 Nights - Includes houseboat stay, meals, and sightseeing</td>
+                            <td>₹20000</td>
+                        </tr>
+                        <tr>
+                            <td>Leh-Ladakh</td>
+                            <td>7 Days, 6 Nights - Includes accommodation, transport, and trekking</td>
+                            <td>₹30000</td>
+                        </tr>
+                        <tr>
+                            <td>Mumbai</td>
+                            <td>3 Days, 2 Nights - Includes city tour, hotel stay, and meals</td>
+                            <td>₹10000</td>
+                        </tr>
+                        <tr>
+                            <td>Indore</td>
+                            <td>2 Days, 1 Night - Includes historical tour and street food experience</td>
+                            <td>₹4000</td>
+                        </tr>
+                        <tr>
+                            <td>Jaipur</td>
+                            <td>3 Days, 2 Nights - Includes fort visits and cultural events</td>
+                            <td>₹8000</td>
+                        </tr>
+                        <tr>
+                            <td>Kolkata</td>
+                            <td>3 Days, 2 Nights - Includes heritage tours and cultural experiences</td>
+                            <td>₹7000</td>
+                        </tr>
+                        <tr>
+                            <td>Bengaluru</td>
+                            <td>2 Days, 1 Night - Includes city tour and garden visits</td>
+                            <td>₹5000</td>
+                        </tr>
+                        <tr>
+                            <td>Assam</td>
+                            <td>5 Days, 4 Nights - Includes wildlife safaris and tea estate tours</td>
+                            <td>₹15000</td>
+                        </tr>
+                        <tr>
+                            <td>Diu</td>
+                            <td>3 Days, 2 Nights - Includes beach tours and Portuguese heritage site visits</td>
+                            <td>₹8000</td>
+                        </tr>
+                        <tr>
+                            <td>Varanasi</td>
+                            <td>2 Days, 1 Night - Includes temple tours and Ganga Aarti experience</td>
+                            <td>₹4000</td>
+                        </tr>
+                        <tr>
+                            <td>Konkan</td>
+                            <td>4 Days, 3 Nights - Includes beach visits, forts, and local sightseeing</td>
+                            <td>₹12000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>What Our Travelers Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"The Taj Mahal trip was truly magical. Excellent service and attention to detail!"</p>
+                    <small>- Priya S.</small>
+                </div>
+                <div class="testimonial">
+                    <p>"Kerala was a dream come true. Thank you for making it a memorable experience!"</p>
+                    <small>- Rajesh K.</small>
+                </div>
+                <div class="testimonial">
+                    <p>"Exploring Mumbai was incredible! Loved the vibrant energy and the tour arrangements."</p>
+                    <small>- Anjali M.</small>
+                </div>
+                <div class="testimonial">
+                    <p>"Jaipur's forts and culture left me speechless. Highly recommend this tour!"</p>
+                    <small>- Sanjay P.</small>
+                </div>
+                <div class="testimonial">
+                    <p>"Assam's wildlife safari was breathtaking. The arrangements were top-notch!"</p>
+                    <small>- Sneha R.</small>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter">
+            <h2>Subscribe to Our Newsletter</h2>
+            <div class="newsletter">
+                <p>Stay updated on the latest travel packages and destinations in India.</p>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Explore Colorful India. All rights reserved.</p>
+    </footer>
+    
+</body>
+
+</html>
